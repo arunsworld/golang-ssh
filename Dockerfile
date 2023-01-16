@@ -1,4 +1,5 @@
-FROM golang:alpine
+FROM --platform=${BUILDPLATFORM} golang:alpine as builder
+ARG TARGETOS TARGETARCH
 LABEL maintainer "Arun Barua - https://github.com/arunsworld"
 ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 22
